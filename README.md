@@ -22,12 +22,16 @@ Work through all these exercises. You edit this file with your answers for these
 
 ### Exercise 2.2
 * What value is returned if you check the machine’s balance after it has printed a ticket?
+* 	The balance value becomes 0 after printing a ticket.
 
 ### Exercise 2.3
 * Experiment with inserting different amounts of money before printing tickets.
 	* Do you notice anything strange about the machine’s behavior?
+ * 		The machine still returns a balance of 0 even if the amount of money inserted isn't divisible by the price of the ticket.
 	* What happens if you insert too much money into the machine – do you receive any refund?
+ * 		No... :'(
 	* What happens if you do not insert enough and then try to print a ticket?
+ * 		It states the price of the ticket and how much money I've inserted total, but still returns a balance value of 0...
 
 ### Exercise 2.4
 * Try to obtain a good understanding of a ticket machine’s behavior by interacting with it on the object bench before we start looking at how the `TicketMachine` class is implemented in the next section.
@@ -36,9 +40,14 @@ Work through all these exercises. You edit this file with your answers for these
 * Create another ticket machine for tickets of a different price.
 	* Buy a ticket from that machine.
 	* Does the printed ticket look different?
+ * 		The price per ticket has changed to the new value I set, and the balance has been updated according to how much I put in. But otherwise it looks the same as my previous ticket.
 
 ### Exercise 2.6
 * Write out what you think the outer wrappers of the `Student` and `LabClass` classes might look like – do not worry about the inner part.
+* 	The outer wrappers for a `Student` class might be:
+* 		Integer getAge(), String getMiddleName(), Boolean isChill(), etc.
+* 	For a `LabClass` class it might be:
+* 		Float calculateGPA(), String getNextLabName(), Integer calculateRemainingLabs(), etc.
 
 ### Exercise 2.7
 Does it matter whether we write<br>
@@ -46,39 +55,48 @@ Does it matter whether we write<br>
 or<br>
 `class public TicketMachine`<br>
 in the outer wrapper of a class?
+	Yes, it won't compile if written in the latter format.
 
 * Edit the source of the `TicketMachine` class to make the change and then close the editor window.
 	* Do you notice a change in the class diagram?
+ * 		The dreaded red cross-hatches of doom have covered my Class.
 	* What error message do you get when you now press the compile button?
+ * 		It reopens the editor window, stating that there are 30 errors found.
 	* Do you think this message clearly explains what is wrong?
+ * 		No. It just iterates through each red, squiggly errors stating that a class was expected.
 
 ### Exercise 2.8
 * Check whether or not it is possible to leave out the word `public` from the outer wrapper of the `TicketMachine` class.
+* 	It does appear to be possible. The program still compiles.
 
 ### Exercise 2.9
 * From your earlier experimentation with the ticket machine objects within BlueJ you can probably remember the names of some of the methods – `printTicket`, for instance.
 	* Look at the class definition in Code 2.1 and use this knowledge, along with the additional information about ordering we have given you, to try to make a list of the names of the fields, constructors, and methods in the `TicketMachine` class.
+ * 		Fields: price, ticketNumber, balance, total
+ * 		Constructors: TicketMachine
+ * 		Methods: getPrice(), getTicketNumber(), getBalance(), insertMoney, calculateTotal(), incrementTicketNumber()
 	* Hint: There is only one constructor in the class.
 
 ### Exercise 2.10
 * Do you notice any features of the constructor that make it significantly different from the other methods of the class?
+	The constructor only consists of initialized variables. All ints are set to 0, and price is equal to ticketCost. Nothing is returned until the other methods.
 
 ### Exercise 2.11
 * What do you think is the type of each of the following fields?
-
+	
 ```java
-private int count;
-private Student representative;
-private Server host;
+private int count; integer
+private Student representative; object
+private Server host; object
 ```
 
 ### Exercise 2.12
 * What are the names of the following fields?
 
 ```java
-private boolean alive;
-private Person tutor;
-private Game game;
+private boolean alive; alive
+private Person tutor; tutor
+private Game game; game
 ```
 ### Exercise 2.13
 
@@ -93,30 +111,37 @@ does it matter which order the three words appear in?
 possible?
 	* Check by pressing the compile button to see if there is an error message.
 	* Make sure that you reinstantiate the original version after your experiments!
+ * 		The ordering does matter, otherwise the program will not compile.
 
 ### Exercise 2.14
 * Is it always necessary to have a semicolon at the end of a field declaration?
+* 	Yes! For the same reason as above.
 * Once again, experiment via the editor.
 * The rule you will learn here is an important one, so be sure to remember it.
 
 
 ### Exercise 2.15
 * Write in full the declaration for a field of type `int` whose name is `status`.
+* 	`private Integer status;`
 
 ### Exercise 2.16
 * To what class does the following constructor belong?
 ```
 public Student(String name)
 ```
+	It belongs to the Student class.
 
 ### Exercise 2.17
 * How many parameters does the following constructor have and what are their types?
 ```
 public Book(String title, double price)
 ```
+	This constructor takes two parameters of type String and double.
 
 ### Exercise 2.18
 * Can you guess what types some of the `Book` class’s fields might be?
+* 	Probably int for page numbers and chapters, String for title and author's name, and bool for if it's part of a series or if it's for kids or not.
 * Can you assume anything about the names of its fields?
+* 	You can assume which type it would be, using the same logic I used in the examples above.
 
 READ upto and INCLUDING section 2.15 of this chapter.
